@@ -1,0 +1,28 @@
+<library>
+<class name="placeholderBox" height="100" width="100" bgcolor="black"/>
+<class name="s3bucket" extends="placeholderBox">
+	<attribute name="filetypeimage" value="textImage" type="string"/>
+	<view   height="90" 
+		width="90" 	
+		bgcolor="gray"
+		x="${(immediateparent.width / 2) - (this.width / 2)}"
+		y="${(immediateparent.height / 2) - (this.height / 2)}"
+		stretches="both"
+		resource="${parent.filetypeimage}"
+		onmouseover="doOver()" 
+		onmouseout="doOut()"
+		onclick="doDie()" >
+	<method name="doOver">
+		this.animate('height',+10,250,true);
+		this.animate('width',+10,250,true);
+	</method>
+	<method name="doOut">
+		this.animate('height',-10,250,true);
+		this.animate('width',-10,250,true);
+	</method>
+	<method name="doDie">
+		parent.destroy();
+	</method>
+	</view>
+</class>
+</library>

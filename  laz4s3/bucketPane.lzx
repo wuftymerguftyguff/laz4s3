@@ -1,0 +1,13 @@
+<tabelement text="Click here to Manage your Storage Buckets" enabled="true">
+	<view>
+		<wrappinglayout axis="y" spacing="10" xinset="1" yinset="1" duration="1000" />
+		<s3bucket filetypeimage="textImage"/>
+		<s3bucket filetypeimage="musicImage"/>
+		<s3bucket filetypeimage="movieImage"/>
+		<s3bucket filetypeimage="graphicsImage"/>
+		<s3bucket filetypeimage="textImage"/>
+		<s3bucket filetypeimage="musicImage"/>
+		<s3bucket filetypeimage="movieImage"/>
+		<s3bucket filetypeimage="graphicsImage"/>
+	</view>
+</tabelement>

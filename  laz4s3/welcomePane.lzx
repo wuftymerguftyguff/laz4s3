@@ -1,0 +1,8 @@
+<tabelement text="Welcome to the Amazon S3 Storage Explorer" selected="true">
+	<view layout="spacing:5">
+		<text>Enter Your Access Key ID: </text>
+		<edittext width="200" text="Enter Your Access Key here"/>
+		<text>Enter Your Secret Access Key: </text>
+		<edittext width="250" text="Enter Your Secret Access Key here" />
+	</view>
+</tabelement>

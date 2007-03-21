@@ -1,0 +1,7 @@
+<library>
+<resource name="newItemImage" src="new.png"/>
+<resource name="textImage" src="text.png"/>
+<resource name="musicImage" src="music.png"/>
+<resource name="movieImage" src="movie.png"/>
+<resource name="graphicsImage" src="graphics.png"/>
+</library>

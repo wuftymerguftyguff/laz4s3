@@ -1,0 +1,10 @@
+<canvas> 
+		<include href="s3x.classes.lzx"/>
+		<include href="s3x.resources.lzx"/>
+		<include href="s3x.javascript.lzx"/>
+	<tabslider width="${immediateparent.width}" height="${immediateparent.height}">
+		<include href="welcomePane.lzx"/>
+		<include href="bucketPane.lzx"/>
+		<include href="keyPane.lzx"/>
+	</tabslider>
+</canvas>
