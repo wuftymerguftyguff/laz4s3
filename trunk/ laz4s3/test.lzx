@@ -12,14 +12,13 @@
 		x="${(immediateparent.width / 2) - (this.width / 2)}"
 		y="${(immediateparent.height / 2) - (this.height / 2)}" 
 		stretches="both"
-		bgcolor="gray" 
-		onload="doOnLoad" >
-	<method name="doOnLoad">
+		bgcolor="gray" >
+	</view>
+	<handler name="onload">
 	Debug.write("onload view");
 	this.setSource(parent.filetypeimage);
 	this.updateResourceSize();
-	</method>
-	</view>
+	</handler>
 </class>
 
 <imgcontainer />
