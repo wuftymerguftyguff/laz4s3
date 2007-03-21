@@ -1,7 +1,7 @@
 <canvas width="500" >
 <resource name="textImage" src="text.png"/>
 <resource name="graphicsImage" src="graphics.png"/>
-<simplelayout axis="y" spacing="100"/>
+<simplelayout axis="y" spacing="50"/>
 
 <class name="wrapper" height="100" width="100" bgcolor="black"/>
 
