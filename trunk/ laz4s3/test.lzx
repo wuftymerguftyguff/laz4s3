@@ -1,0 +1,24 @@
+<canvas width="500" >
+<resource name="textImage" src="text.png"/>
+<resource name="graphicsImage" src="graphics.png"/>
+<simplelayout axis="y" spacing="100"/>
+
+<class name="wrapper" height="100" width="100" bgcolor="black"/>
+
+<class name="imgcontainer" extends="wrapper">
+	<attribute name="filetypeimage" value="textImage" type="string"/>
+	<view 	height="90" 
+		width="90"
+		x="${(immediateparent.width / 2) - (this.width / 2)}"
+		y="${(immediateparent.height / 2) - (this.height / 2)}" 
+		resource="textImage"
+		stretches="both"
+		bgcolor="gray" 
+	/>
+</class>
+
+<imgcontainer />
+<imgcontainer filetypeimage="textImage"/>
+<imgcontainer filetypeimage="graphicsImage"/>
+
+</canvas>
