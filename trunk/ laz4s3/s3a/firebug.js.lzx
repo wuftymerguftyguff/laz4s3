@@ -1,6 +1,8 @@
 <library>
 <script>
+#pragma <passThrough=true/>;
 <![CDATA[
+
 /**
     Logging hooks for Firebug.
 */
