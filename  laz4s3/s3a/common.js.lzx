@@ -6,42 +6,7 @@
     Share and Enjoy
 */
 
-if (!window.Node) {
-   window.Node = {
-      ELEMENT_NODE : 1,
-      ATTRIBUTE_NODE : 2,
-      TEXT_NODE : 3,
-      CDATA_SECTION_NODE : 4,
-      ENTITY_REFERENCE_NODE : 5,
-      ENTITY_NODE : 6,
-      PROCESSING_INSTRUCTIONS_NODE : 7,
-      COMMENT_NODE : 8,
-      DOCUMENT_NODE : 9,
-      DOCUMENT_TYPE_NODE : 10,
-      DOCUMENT_FRAGMENT_NODE : 11,
-      NOTATION_NODE : 12
-   }
-}
 
-if (!window['addLoadEvent']) {
-    // See: http://simon.incutio.com/archive/2004/05/26/addLoadEvent
-    function addLoadEvent(func) {
-        var oldonload = window.onload;
-        if (typeof window.onload != 'function') {
-            window.onload = func;
-        } else {
-            window.onload = function() {
-                oldonload();
-                func();
-            }
-        }
-    }
-}
-
-if (!window['$']) {
-    // Swiped from MochiKit / Prototype
-    function $(id) { return document.getElementById(id); }
-}
 
 /**
     Get the parsed XML response from an HTTP request, even if
@@ -141,21 +106,6 @@ function createDOM(name, attrs, nodes) {
     return elem;
 }
 
-function createDOMFunc(name) {
-    return function(attrs) {
-        var nodes = [];
-        for (var i=1; i<arguments.length; i++) 
-            nodes[nodes.length] = arguments[i];
-        return createDOM(name, attrs, nodes);
-    }
-}
-
-forEach([ 
-    'A', 'BUTTON', 'BR', 'CANVAS', 'DIV', 'FIELDSET', 'FORM',
-    'H1', 'H2', 'H3', 'HR', 'IMG', 'INPUT', 'LABEL', 'LEGEND', 'LI', 'OL',
-    'OPTGROUP', 'OPTION', 'P', 'PRE', 'SELECT', 'SPAN', 'STRONG', 'TABLE', 'TBODY',
-    'TD', 'TEXTAREA', 'TFOOT', 'TH', 'THEAD', 'TR', 'TT', 'UL' 
-    ], function(n) { window[n] = createDOMFunc(n); });
- ]]>
+]]>
 </script>
 </library>
