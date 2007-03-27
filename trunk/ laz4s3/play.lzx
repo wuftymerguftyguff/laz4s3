@@ -1,0 +1,45 @@
+<canvas width="800" debug="1">
+<include href="s3x.javascript.lzx"/>
+	<simplelayout/>
+<resource name="textImage" src="text.png"/>
+<resource name="bucketImage" src="woodenBucket.png"/>
+<view>
+	<simplelayout/>
+		<text>Enter Your Access Key ID: </text>
+		<edittext id="amakey" width="200" text="0P84MVB3MM7WKBJ1NSG2"/>
+		<text>Enter Your Secret Access Key: </text>
+		<edittext id="secamakey" width="300" text="4rxOfa1hRdLvrQqeHLCr6vZhJLvuAwv52QNy/eL/" />
+		<edittext id="bobbins" width="300" text="">
+		<handler name="oninit">
+		Debug.write("wonky");
+		s3x.listbuckets;
+		Debug.write("wonky");
+		
+		</handler>
+		</edittext>
+
+</view>
+<dataset name="dset">
+    <phonebook>
+      <employee>
+        <firstName>John</firstName>
+        <lastName>Smith</lastName>
+        <phone>617-536-7855</phone>
+      </employee>
+      <employee>
+        <firstName>Lisa</firstName>
+        <lastName>Jones</lastName>
+        <phone>617-536-5216</phone>
+      </employee>
+    </phonebook>
+  </dataset>
+  
+  <view datapath="dset:/phonebook/employee" 
+        layout="axis: x">
+    <text datapath="firstName/text()"/>
+    <text datapath="lastName/text()"/>
+    <text datapath="phone/text()"/>
+  </view>
+
+
+</canvas>
