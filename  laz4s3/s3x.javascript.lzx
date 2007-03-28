@@ -1,4 +1,5 @@
 <library>
 	<include href="s3a/firebug.js.lzx"/>
 	<include href="s3a/sha1.js.lzx"/>
+	<include href="s3a/S3Ajax.js.lzx"/>
 </library>
