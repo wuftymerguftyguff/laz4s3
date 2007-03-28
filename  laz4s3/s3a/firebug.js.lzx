@@ -7,13 +7,11 @@
 useFireBug = true;
 
 printfire = function() { 
-#pragma "passThrough=true"
     printfire.args = arguments; 
     // Opera8 does not support dispatchEvent() 
     // as global method (not required by W3C). 
     // This helps to sort it out. 
     try { 
-	#pragma "passThrough=true"
         if (!useFireBug) { 
             // Mozilla installations without FireBug extension 
             throw 'useAlertFunction'; 
