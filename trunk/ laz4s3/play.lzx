@@ -1,8 +1,6 @@
 <canvas width="800" debug="1">
-<include href="s3x.javascript.lzx"/>
 	<simplelayout/>
-<resource name="textImage" src="text.png"/>
-<resource name="bucketImage" src="woodenBucket.png"/>
+<include href="s3x.javascript.lzx"/>
 <view>
 	<simplelayout/>
 		<text>Enter Your Access Key ID: </text>
@@ -10,13 +8,17 @@
 		<text>Enter Your Secret Access Key: </text>
 		<edittext id="secamakey" width="300" text="4rxOfa1hRdLvrQqeHLCr6vZhJLvuAwv52QNy/eL/" />
 		<edittext id="bobbins" width="300" text="">
-		<handler name="oninit">
-		Debug.write("wonky");
-		s3x.listbuckets;
-		Debug.write("wonky");
-		
-		</handler>
 		</edittext>
+		<button text="Clicky!">
+		<handler name="onclick">
+		var now = new Date();
+		var secs = String(now.getTime());
+		var amaKey = String(bobbins.getAttribute('text'));
+		Debug.write(hex_sha1(secs)) ;
+		Debug.write(hex_hmac_sha1(amaKey,secs)) ;
+		</handler>
+	</button>
+		
 
 </view>
 <dataset name="dset">
@@ -32,7 +34,7 @@
         <phone>617-536-5216</phone>
       </employee>
     </phonebook>
-  </dataset>
+ </dataset>
   
   <view datapath="dset:/phonebook/employee" 
         layout="axis: x">

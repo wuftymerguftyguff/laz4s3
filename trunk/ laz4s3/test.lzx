@@ -15,8 +15,8 @@
 		bgcolor="gray" >
 	</view>
 	<handler name="onload">
-	Debug.write("onload view");
-	this.setSource(parent.filetypeimage);
+	Debug.write("oninit view");
+	this.setAttribute('resource', graphicsImage);
 	this.updateResourceSize();
 	</handler>
 </class>
