@@ -35,7 +35,7 @@ function addToList(lid, label, key) {
 function setList(lid, items) {
     var list = $(lid);
     this.clearList(lid);
-    for(i=0;i<items.length;i+=2) {
+    for(var i=0;i<items.length;i+=2) {
         list.options[i/2] = new Option(items[i],items[i+1]);
     }
 }
@@ -43,7 +43,8 @@ function setList(lid, items) {
 function getSelected(lid) {
     var sel = [];
     var options = $(lid).options;
-    for (var i=0, item; item=options[i]; i++) {
+    var item=null;
+    for (var i=0; item=options[i]; i++) {
         if (item.selected) sel.push(item.value);
     }
     return sel;
