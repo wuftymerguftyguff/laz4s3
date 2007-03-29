@@ -4,18 +4,22 @@
 <view>
 	<simplelayout/>
 		<text>Enter Your Access Key ID: </text>
-		<edittext id="amakey" width="200" text="0P84MVB3MM7WKBJ1NSG2"/>
+		<edittext id="key_id" width="200" text="0P84MVB3MM7WKBJ1NSG2"/>
 		<text>Enter Your Secret Access Key: </text>
-		<edittext id="secamakey" width="300" text="4rxOfa1hRdLvrQqeHLCr6vZhJLvuAwv52QNy/eL/" />
+		<edittext id="secret_key" width="300" text="4rxOfa1hRdLvrQqeHLCr6vZhJLvuAwv52QNy/eL/" />
 		<edittext id="bobbins" width="300" text="">
 		</edittext>
-		<button text="Clicky!">
+		<edittext id="amastatustext" width="300" text="">
+		</edittext>
+		<button text="Login">
 		<handler name="onclick">
 		var now = new Date();
 		var secs = String(now.getTime());
-		var amaKey = String(bobbins.getAttribute('text'));
+		var amaKey = String(secret_key.getAttribute('text'));
 		Debug.write(hex_sha1(secs)) ;
 		Debug.write(hex_hmac_sha1(amaKey,secs)) ;
+		s3x.login(this);
+		s3x.listbuckets(this);
 		</handler>
 	</button>
 		

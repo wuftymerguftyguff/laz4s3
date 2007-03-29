@@ -50,16 +50,20 @@ s3x = {
         Accept new credentials from the form in the page.
     */
     login: function() {
-        S3Ajax.KEY_ID     = $('key_id').value;
-        S3Ajax.SECRET_KEY = $('secret_key').value;
+        S3Ajax.KEY_ID     = String(key_id.getAttribute('text'));
+        S3Ajax.SECRET_KEY = String(secret_key.getAttribute('text'));
 
         // Try to stash the credentials away for next time.
+	/*
         if (window.dojo) {
             dojo.storage.set('key_id',     S3Ajax.KEY_ID,     '/S3Ajax');
             dojo.storage.set('secret_key', S3Ajax.SECRET_KEY, '/S3Ajax');
         }
+	*/
 
-        $('update_msg').innerHTML = 'Last updated: '+(new Date());
+        //statustext.setAttribute('text', 'Last updated: '+(new Date()) );
+	alert(S3Ajax.KEY_ID);
+	alert(S3Ajax.SECRET_KEY);
     },
 
     /**
@@ -123,20 +127,24 @@ s3x = {
 	Debug.write("enter listbuckets");
         var _this = this;
 
-        setList('buckets_list',['Loading...','']);
+//        setList('buckets_list',['Loading...','']);
 
         S3Ajax.listBuckets(
             function(req, obj) {
-                clearList('buckets_list');
+//               clearList('buckets_list');
                 if (obj.ListAllMyBucketsResult) {
+			Debug.write(obj.ListAllMyBucketsResult);
                     var buckets = obj.ListAllMyBucketsResult.Buckets.Bucket;
-                    for (var i=0, bucket; bucket=buckets[i]; i++) {
-			bobbins.setAttribute("text",bucket.Name);
+		    var bucket = null;
+                    for (var i=0 ; bucket=buckets[i]; i++) {
+			alert(bucket.Name);
+/*
                         addToList(
                             'buckets_list',
                             bucket.Name + ' ['+bucket.CreationDate+']',
                             bucket.Name
                         );
+*/
                     }
                 }
                 keys_list = null;
@@ -199,7 +207,8 @@ s3x = {
             function(req, obj) {
                 clearList('keys_list');
                 var contents = obj.ListBucketResult.Contents;
-                for (var i=0, item; item=contents[i]; i++) {
+		var item = null;
+                for (var i=0; item=contents[i]; i++) {
                     addToList(
                         'keys_list',
                         /*item.LastModified + ' ' +*/ item.Key + ' (' + item.Size + ')',
