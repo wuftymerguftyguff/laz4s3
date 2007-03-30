@@ -14,12 +14,14 @@
 		<button text="Login">
 		<handler name="onclick">
 		var now = new Date();
-		var secs = String(now.getTime());
-		var amaKey = String(secret_key.getAttribute('text'));
-		Debug.write(hex_sha1(secs)) ;
-		Debug.write(hex_hmac_sha1(amaKey,secs)) ;
-		s3x.login(this);
-		s3x.listbuckets(this);
+		var secs = toString(now.getTime());
+		var amaKey = toString(secret_key.getAttribute('text'));
+		alert("boing");
+		sha1_vm_test();
+		alert(hex_sha1("abc")) ;
+		alert(hex_sha1(secs)) ;
+		alert(hex_hmac_sha1(amaKey,secs)) ;
+		alert("theend");
 		</handler>
 	</button>
 		
